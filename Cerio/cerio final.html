@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CÉRIO·58</title>
+<link rel="icon" type="image/svg+xml" href="./faviconce.svg">
+<meta name="description" content="Cério (Ce 58): propriedades, ocorrência, extração, disputas geopolíticas, mercado e aplicações do lantanídeo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#050506;--graphite:#1c1d20;--steel:#8d9096;--silver:#cfd1d4;--paper:#f1f1ef;--white:#fff;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --pad:clamp(1.25rem,5vw,5rem);--ease:cubic-bezier(.2,.7,.1,1);
+  --intro-aura-1:rgba(198,212,226,.20);--intro-aura-2:rgba(150,170,192,.16);--intro-aura-3:rgba(120,140,165,.12);--intro-dust-color:#dfe6ee;
+  --intro-silver:linear-gradient(175deg,#fff 0%,#dfe4e9 22%,#97a1ab 45%,#fbfdff 55%,#aab3bd 72%,#eef2f6 100%)
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+body{font:1.0625rem/1.6 var(--serif);background:var(--ink);color:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--silver);outline-offset:3px}
+.light :focus-visible{outline-color:var(--ink)}
+.dark{background:transparent;color:var(--paper);position:relative;z-index:2}
+.light{background:var(--paper);color:var(--ink);position:relative;z-index:2}
+/* fundo animado global: nas seções claras ele aparece invertido (backdrop-filter) */
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .light,.sec.light{background:transparent;-webkit-backdrop-filter:invert(1) hue-rotate(180deg);backdrop-filter:invert(1) hue-rotate(180deg)}
+}
+
+.progress{position:fixed;inset:0 0 auto;height:2px;z-index:100}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--steel),var(--white))}
+
+.nav{position:fixed;inset:0 0 auto;z-index:90;display:flex;justify-content:space-between;align-items:center;padding:1rem var(--pad);mix-blend-mode:difference;color:#fff;font-family:var(--display)}
+.brand{text-decoration:none;font-weight:800;font-size:1.4rem;letter-spacing:-.02em}
+.brand sup{font-size:.55em;font-weight:300;margin-left:.2em}
+.nav nav{position:fixed;top:4.25rem;right:var(--pad);display:flex;flex-direction:column;gap:.2rem;min-width:14rem;padding:.75rem;background:var(--graphite);border:1px solid rgba(255,255,255,.18);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-.5rem);transition:opacity .22s ease,transform .22s ease,visibility .22s ease}
+.nav nav a{text-decoration:none;font-size:.9rem;position:relative;padding:.5rem .6rem;white-space:nowrap}
+.nav nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.nav nav a:hover::after,.nav nav a.on::after{transform:scaleX(1)}
+.nav.open nav{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.nav.open{mix-blend-mode:normal}
+.burger{display:block;background:none;border:1px solid currentColor;color:inherit;font:inherit;font-size:.9rem;padding:.4rem .9rem;cursor:pointer}
+
+.hero-meta{display:flex;justify-content:space-between;gap:1rem;font-family:var(--display);font-size:.8rem;color:var(--steel);position:relative;z-index:3}
+
+.mega{
+  font:800 clamp(4.5rem,23vw,22rem)/.85 var(--display);
+  letter-spacing:-.06em;
+  display:flex;justify-content:space-between;
+  background:linear-gradient(180deg, rgba(255,255,255,0.95) 10%, rgba(141,144,150,0.8) 55%, rgba(232,232,230,0.9) 100%);
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;
+  mix-blend-mode: overlay; /* Permite ver o 3D rodando através das letras */
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.mega span{display:inline-block;animation:rise 1.3s var(--ease) both}
+.mega span:nth-child(2){animation-delay:.1s}.mega span:nth-child(3){animation-delay:.2s}.mega span:nth-child(4){animation-delay:.3s}.mega span:nth-child(5){animation-delay:.4s}
+@keyframes rise{from{transform:translateY(60%);opacity:0}to{transform:none;opacity:1}}
+
+.hero-row{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;position:relative;z-index:3}
+.tile{width:8.5rem;aspect-ratio:1;border:1px solid var(--steel);padding:.6rem;font-family:var(--display);display:grid;grid-template-rows:auto 1fr auto;background:rgba(5,5,6,0.6);backdrop-filter:blur(8px)}
+.tile b{font-weight:300;font-size:.9rem}.tile strong{font-size:3.6rem;font-weight:800;align-self:center;line-height:1}.tile small{font-size:.75rem;color:var(--steel)}
+.hero-claim{font:italic clamp(1.2rem, 2vw, 1.6rem)/1.3 var(--serif);max-width:35ch;background:rgba(5,5,6,0.5);padding:1rem;border-radius:4px;backdrop-filter:blur(4px)}
+.scroll{text-decoration:none;display:flex;align-items:center;gap:.8rem}
+.scroll i{display:block;width:1px;height:2.5rem;background:var(--steel);position:relative;overflow:hidden}
+.scroll i::after{content:"";position:absolute;inset:0;background:#fff;animation:drip 2s infinite var(--ease)}
+@keyframes drip{from{transform:translateY(-100%)}to{transform:translateY(100%)}}
+
+/* Efeito de Rolagem Reversa (Upward Parallax) */
+.reverse-scroll-wrapper {
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+
+/* Seções */
+.sec{padding:clamp(4rem,10vw,8rem) var(--pad);position:relative;z-index:2;background:transparent}
+.idx{font:300 .85rem var(--display);color:var(--steel);border-top:1px solid currentColor;padding-top:.7rem;max-width:12rem;margin-bottom:2rem}
+.title{font:800 clamp(2.5rem,7vw,6.5rem)/.95 var(--display);letter-spacing:-.045em;margin-bottom:3rem}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);margin-top:2rem}
+.cols p+p{margin-top:1rem}
+.lead{font-size:clamp(1.2rem,2vw,1.8rem);line-height:1.35}
+h3{font:800 1.25rem var(--display);letter-spacing:-.01em;margin:0 0 .5rem;color:inherit}
+.cols h3:not(:first-child){margin-top:2rem}
+.cols p{max-width:62ch}
+
+.ptable{margin-top:4rem}
+.ptable .row{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.4rem;max-width:44rem}
+.ptable i,.ptable b{aspect-ratio:1;border:1px solid #bbb;font:300 .8rem/1.2 var(--display);padding:.4rem;font-style:normal;display:flex;align-items:center;justify-content:center;text-align:center}
+.ptable i:empty{border-style:dashed;opacity:.4}
+.ptable b{background:var(--ink);color:#fff;font-weight:800;font-size:1rem;transform:scale(1.12);position:relative;z-index:1}
+.ptable figcaption{font-size:.85rem;margin-top:1rem;color:#555}
+
+.data{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #333;margin-bottom:3rem}
+.data div{padding:1.5rem 1rem 1.5rem 0;border-right:1px solid #333}
+.data div+div{padding-left:1.5rem}.data div:last-child{border:0}
+.num{display:block;font:300 clamp(2rem,4.5vw,4.5rem)/1 var(--display);letter-spacing:-.04em}
+.data em{font:300 .85rem var(--display);color:var(--steel);font-style:normal}
+.redox{width:100%;max-width:22rem;margin-top:2rem;stroke:var(--silver);fill:none;stroke-width:1.5}
+.redox .t{font:800 24px var(--display);fill:var(--paper);stroke:none}.redox .s{font:12px var(--display);fill:var(--steel);stroke:none}
+
+.steps{list-style:none;padding:0;margin:3rem 0;counter-reset:s;border-top:1px solid currentColor}
+.steps li{counter-increment:s;display:grid;grid-template-columns:4rem 12rem 1fr;gap:1rem;padding:1.2rem 0;border-bottom:1px solid color-mix(in srgb,currentColor 20%,transparent);align-items:baseline}
+.steps li::before{content:counter(s,decimal-leading-zero);font:300 .9rem var(--display);opacity:.6}
+.steps b{font:800 1.2rem var(--display);letter-spacing:-.02em}
+
+/* Enquadramento dos Cartões */
+.cols>*:not(.lead),.foot p:not(.mega),.app>div,.geo-card{
+  position:relative;padding:1.8rem;border:1px solid currentColor;
+  border-color:color-mix(in srgb,currentColor 25%,transparent);
+  background: color-mix(in srgb, currentColor 3%, transparent);
+}
+.cols>*:not(.lead)::before,.cols>*:not(.lead)::after,.app>div::before,.app>div::after,.geo-card::before,.geo-card::after{
+  content:"";position:absolute;width:10px;height:10px;border:2px solid currentColor;
+}
+.cols>*:not(.lead)::before,.app>div::before,.geo-card::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.cols>*:not(.lead)::after,.app>div::after,.geo-card::after{right:-1px;bottom:-1px;border-left:0;border-top:0}
+
+/* Aplicações */
+.apps{display:grid;gap:clamp(2.5rem,5vw,4.5rem);margin-top:2rem}
+.app{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.app:nth-child(even) figure{order:2}
+.app figure{position:relative;aspect-ratio:4/3;overflow:hidden;background:#111;border:1px solid #333}
+.app figure svg{position:absolute;inset:10%;width:80%;height:80%;stroke-width:1.2;transition:transform .9s var(--ease);z-index:1}
+.app figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(0.8) contrast(1.1);transition:transform 1.2s var(--ease), filter 0.5s;z-index:2}
+.app:hover figure img{transform:scale(1.06);filter:grayscale(0) contrast(1)}
+.app figcaption{position:absolute;left:.9rem;bottom:.7rem;z-index:3;font:300 .75rem var(--display);color:var(--paper);background:rgba(0,0,0,0.7);padding:2px 8px}
+.app h3{font-size:clamp(1.4rem,2.5vw,2.2rem);letter-spacing:-.03em;margin-bottom:.8rem}
+.app p{color:var(--silver)}
+.app .how{margin-top:1rem;padding-top:1rem;border-top:1px solid #333;font-size:.95rem}
+
+/* Quiz */
+.quizsec{min-height:100svh;position:relative;z-index:10;background:transparent}
+.quiz{max-width:56rem;margin:0 auto;border-top:1px solid #444;padding-top:2rem}
+.q-top{display:flex;justify-content:space-between;font:300 .9rem var(--display);color:var(--steel)}
+.q-track{height:2px;background:#333;margin:.8rem 0 2.5rem}.q-track i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--steel),#fff);transition:width .6s var(--ease)}
+#qText{font:800 clamp(1.8rem,4vw,3.2rem)/1.15 var(--display);letter-spacing:-.03em;margin-bottom:2.5rem;min-height:2.4em}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.opt{display:flex;align-items:center;gap:1.2rem;min-height:5.5rem;padding:1.2rem 1.5rem;font:1.1rem var(--serif);border:1px solid #444;background:transparent;color:var(--paper);cursor:pointer;text-align:left;transition:all .3s var(--ease)}
+.opt::before{content:attr(data-l);flex:none;display:grid;place-items:center;width:2.2rem;height:2.2rem;border:1px solid currentColor;font:800 .9rem var(--display)}
+.opt:hover:not(:disabled){background:var(--paper);color:var(--ink);transform:translateY(-3px)}
+.opt.ok{background:var(--paper);color:var(--ink);border-color:var(--paper);font-weight:bold}
+.opt.bad{border-style:dashed;color:#777;border-color:#555}
+.opt:disabled:not(.ok):not(.bad){opacity:.3}
+.quiz.wrong{animation:shake .4s}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+.pop{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:rgba(5,5,6,.85);backdrop-filter:blur(8px);padding:1.25rem}
+.pop[hidden]{display:none}
+.pop-card{max-width:34rem;background:var(--paper);color:var(--ink);padding:2.5rem;animation:rise .5s var(--ease)}
+#popT{font:800 clamp(1.8rem,4vw,2.8rem)/1 var(--display);letter-spacing:-.04em;margin-bottom:1rem}
+#popB{margin-bottom:1.5rem;font-size:1.05rem}
+
+.btn{display:inline-block;font:800 1rem var(--display);padding:.8rem 1.6rem;background:var(--ink);color:#fff;border:1px solid var(--ink);cursor:pointer;text-decoration:none;transition:all .3s}
+.btn:hover{background:transparent;color:var(--ink)}
+.quiz .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.quiz .btn:hover{background:transparent;color:var(--paper)}
+
+.foot{padding:5rem var(--pad) 6rem;position:relative;z-index:2;background:transparent}
+.mega.small{font-size:clamp(3rem,14vw,12rem);margin:0 0 2rem;mix-blend-mode:normal;color:transparent;background:linear-gradient(180deg,#c9cdd2 0%,#a8adb4 55%,#858b93 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.foot p:not(.mega){max-width:60ch;color:var(--steel);font-size:.9rem}
+
+
+.reveal{opacity:0;transform:translateY(2rem);transition:opacity 0.9s var(--ease),transform 0.9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:110}
+
+@media (max-width:820px){
+  .nav nav{top:4rem;right:var(--pad);left:auto;width:min(18rem,calc(100vw - 2 * var(--pad)));min-width:0}
+  .nav nav a{font-size:1rem}
+  .hero-row{grid-template-columns:1fr}.hero-claim{font-size:1.1rem}
+  .cols{grid-template-columns:1fr}
+  .data{grid-template-columns:1fr 1fr}.data div:nth-child(2){border-right:0}
+  .steps li{grid-template-columns:1fr}.steps li::before{display:inline-block;margin-right:0.5rem}
+  .app{grid-template-columns:1fr}.app:nth-child(even) figure{order:0}
+  .opts{grid-template-columns:1fr}
+}
+/* ===== ABERTURA: roda dos lantanídeos + zoom no nome ===== */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.intro{position:relative;height:400vh;background:transparent;z-index:2}
+.intro-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:transparent}
+.site-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:radial-gradient(ellipse at center,#23262b 0%,#000 70%)}
+.intro-aura{position:absolute;top:38%;left:30%;width:72vmax;height:72vmax;margin:-36vmax 0 0 -36vmax;border-radius:50%;background:radial-gradient(circle at 50% 50%,var(--intro-aura-1) 0%,var(--intro-aura-3) 40%,transparent 70%);filter:blur(40px);opacity:.55;animation:intro-drift-a 26s ease-in-out infinite alternate;transition:opacity 1.4s ease}
+.intro-aura--b{top:66%;left:74%;width:62vmax;height:62vmax;margin:-31vmax 0 0 -31vmax;background:radial-gradient(circle at 50% 50%,var(--intro-aura-2) 0%,rgba(90,110,135,.06) 42%,transparent 72%);animation:intro-drift-b 34s ease-in-out infinite alternate}
+.site-bg.is-lit .intro-aura{opacity:.8}.site-bg.is-big .intro-aura{opacity:1}
+.intro-sweep{position:absolute;inset:-25% -60%;background:linear-gradient(100deg,transparent 42%,rgba(255,255,255,.06) 50%,transparent 58%);animation:intro-sweep 18s ease-in-out infinite}
+.intro-dust{position:absolute;inset:0}.intro-dust span{position:absolute;display:block;border-radius:50%;background:var(--intro-dust-color);box-shadow:0 0 6px rgba(215,228,240,.55);opacity:0;animation:intro-float var(--dur,20s) linear var(--delay,0s) infinite}
+.intro-grain{position:absolute;inset:-60%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");background-size:220px 220px;opacity:.045;animation:intro-grain 1.6s steps(5) infinite}
+@keyframes intro-drift-a{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(14%,9%,0) scale(1.16)}100%{transform:translate3d(-6%,16%,0) scale(1.05)}}
+@keyframes intro-drift-b{0%{transform:translate3d(0,0,0) scale(1.1)}50%{transform:translate3d(-16%,-10%,0) scale(1)}100%{transform:translate3d(8%,-18%,0) scale(1.18)}}
+@keyframes intro-sweep{0%{transform:translateX(-45%);opacity:0}10%{opacity:1}44%{opacity:1}54%{transform:translateX(45%);opacity:0}100%{transform:translateX(45%);opacity:0}}
+@keyframes intro-float{0%{transform:translate3d(0,0,0);opacity:0}18%{opacity:var(--peak,.4)}82%{opacity:var(--peak,.4)}100%{transform:translate3d(var(--drift,0px),-46vh,0);opacity:0}}
+@keyframes intro-grain{0%{transform:translate3d(0,0,0)}25%{transform:translate3d(-2%,1%,0)}50%{transform:translate3d(1%,-2%,0)}75%{transform:translate3d(-1%,-1%,0)}100%{transform:translate3d(0,0,0)}}
+.wheel{position:absolute;top:50%;left:calc(50% - min(23vw,13rem));width:0;height:0;font-size:clamp(2.1rem,6.3vw,6rem)}
+.wi{position:absolute;left:0;top:0;margin-top:-.5em;display:flex;align-items:center;gap:.42em;white-space:nowrap;font:800 1em/1 var(--display);letter-spacing:-.04em;transform-origin:0 50%;will-change:transform,filter,opacity;color:#7d8086}
+.wi.is-target{z-index:3;transform-origin:0 50%;transition:color .35s ease}
+.wi.is-target span{color:#696d74;transition:color .45s ease,text-shadow .45s ease}
+.wi.is-target.is-lit span{color:#b9c0c8;text-shadow:none}
+.wi.is-target.is-big span{position:relative;text-transform:uppercase;letter-spacing:.08em;color:transparent;background:var(--intro-silver);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(-3px 0 1px rgba(24,29,35,.55))}
+.wi.is-target.is-big span::after{content:attr(data-text);position:absolute;inset:0;color:transparent;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.72) 50%,transparent 65%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;animation:cerio-title-shine 2.8s ease-in-out 1.2s 1 both}
+@keyframes cerio-title-shine{from{background-position:150% 0}to{background-position:-100% 0}}
+.scene{position:absolute;z-index:3;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:5.2rem var(--pad) 1.4rem;pointer-events:none}
+.scene-bottom{display:flex;flex-direction:column;gap:1.6rem}
+.scene .scroll{pointer-events:auto}
+.scene .rv{opacity:0;transform:translateY(18px);transition:opacity .45s var(--ease),transform .45s var(--ease);transition-delay:0s}
+.intro-stage.show .scene .rv{opacity:1;transform:none;transition-delay:var(--dl,0s)}
+@media (prefers-reduced-motion:reduce){.intro{height:auto}.intro-stage{position:relative}.wheel{display:none}.scene .rv{opacity:1;transform:none;transition:none}.intro-aura,.intro-sweep,.intro-grain,.intro-dust span{animation:none}.intro-dust span{opacity:.25}}
+@media (max-width:820px){.wheel{left:calc(50% - 30vw)}.scene{padding-top:4.6rem}.scene-bottom{gap:1rem}}
+.wheel{z-index:2}
+.scene{z-index:5}
+.nav .brand{transition:opacity .45s ease,visibility .45s ease}
+.nav.intro-opening .brand,.nav.intro-opening nav,.nav.intro-opening .burger{opacity:0;visibility:hidden;pointer-events:none}
+
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+
+<!-- FUNDO ANIMADO GLOBAL (o mesmo da abertura, agora fixo no site todo) -->
+<div class="site-bg" id="siteBg" aria-hidden="true"><div class="intro-aura"></div><div class="intro-aura intro-aura--b"></div><div class="intro-sweep"></div><div class="intro-dust" id="introDust"></div><div class="intro-grain"></div></div>
+
+<header class="nav">
+  <a class="brand" href="#topo" aria-label="CÉRIO, início">Ce<sup>58</sup></a>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+  <nav id="menu" aria-label="Seções">
+    <a href="#introducao">Introdução</a>
+    <a href="#propriedades">Propriedades</a>
+    <a href="#geopolitica">Impactos</a>
+    <a href="#mercado">Mercado</a>
+    <a href="#extracao">Extração</a>
+    <a href="#aplicacoes">Aplicações</a>
+    <a href="#quiz">Quiz</a>
+  </nav>
+</header>
+
+<main id="main-content">
+<!-- HERO SECTION COM CANVAS 3D EM PROFUNDIDADE -->
+<section class="intro" id="topo" data-name="Início" aria-label="Cério, Ce 58, os lantanídeos">
+  <div class="intro-stage" id="introStage">
+    <div class="wheel" id="wheel" aria-hidden="true"></div>
+    <h1 class="sr-only">Cério</h1>
+    <p class="sr-only">Os quinze lantanídeos: Lantânio, Cério, Praseodímio, Neodímio, Promécio, Samário, Európio, Gadolínio, Térbio, Disprósio, Hólmio, Érbio, Túlio, Itérbio e Lutécio.</p>
+
+    <div class="scene">
+      <div class="hero-meta top rv" style="--dl:.06s">
+        <span>Lantanídeo · Grupo 3 · Período 6</span>
+        <span>Massa Atômica: 140,116</span>
+      </div>
+      <div class="scene-bottom">
+        <div class="hero-row">
+          <div class="tile rv" style="--dl:.12s" aria-hidden="true">
+            <b>58</b><strong>Ce</strong><small>Cério</small>
+          </div>
+          <p class="hero-claim rv" style="--dl:.18s">O metal prateado que faz o vidro brilhar.</p>
+        </div>
+        <div class="hero-meta bottom rv" style="--dl:.24s">
+          <span>Orelha</span>
+          <a class="scroll" href="#introducao">·<i></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTAINER REVERSE SCROLL PARA ILUSÃO DE NAVEGAÇÃO DE SUBIDA -->
+<div class="reverse-scroll-wrapper" id="reverseWrapper">
+
+<section class="light sec" id="introducao" data-name="Introdução">
+  <p class="idx">01</p>
+  <h2 class="title reveal">O mais abundante<br>entre os raros.</h2>
+  <div class="cols">
+    <p class="lead reveal">O cério (símbolo <strong>Ce</strong>, número atômico <strong>58</strong>) é um metal reativo de tom cinza-prateado, macio e dúctil. Ele encabeça a série dos lantanídeos na tabela periódica.</p>
+    <div class="reveal">
+      <p>Apesar de pertencer ao grupo dos "elementos de terras raras", o cério é incrivelmente abundante na crosta terrestre (cerca de 66 ppm), sendo mais comum que o cobre ou o chumbo. O termo "raro" persiste historicamente devido à extrema dificuldade técnica em isolá-lo de outros lantanídeos idênticos.</p>
+      <p>Descoberto em 1803 de forma independente por Jöns Jacob Berzelius e Wilhelm Hisinger na Suécia, e por Martin Klaproth na Alemanha, recebeu seu nome em homenagem ao planeta anão Ceres.</p>
+      <p>Com sua capacidade única de alternar estados de oxidação rapidamente, tornou-se o pilar da indústria de polimento de precisão, óptica e controle de emissões.</p>
+    </div>
+  </div>
+  <figure class="ptable reveal" aria-label="Posição do cério na tabela periódica">
+    <div class="row"><i></i><i></i><i></i><i class="on">La<br>57</i><b>Ce<br>58</b><i>Pr<br>59</i><i>Nd<br>60</i><i>Pm<br>61</i></div>
+    <figcaption>Cério (Ce) na posição 58, abrindo a série dos lantanídeos entre o Lantânio (57) e o Praseodímio (59).</figcaption>
+  </figure>
+</section>
+
+<section class="dark sec" id="propriedades" data-name="Propriedades">
+  <p class="idx">02</p>
+  <h2 class="title reveal">Um metal que<br>reage e se adapta.</h2>
+  <div class="data">
+    <div class="reveal"><span class="num" data-to="58">0</span><em>número atômico</em></div>
+    <div class="reveal"><span class="num" data-to="140.116" data-dec="3">0</span><em>massa atômica padrão (u)</em></div>
+    <div class="reveal"><span class="num" data-to="795">0</span><em>ponto de fusão (°C)</em></div>
+    <div class="reveal"><span class="num" data-to="6.77" data-dec="2">0</span><em>densidade (g/cm³)</em></div>
+  </div>
+  <div class="cols">
+    <div class="reveal">
+      <h3>Propriedades Físicas</h3>
+      <p>É um metal dúctil e maleável, facilmente cortado com uma lâmina. Apresenta brilho metálico prateado reluzente quando recém-polido, mas oxida-se rapidamente em contato com o ar.</p>
+      <h3>Propriedades Químicas</h3>
+      <p>Altamente reativo. Em forma de limalha ou pó fino, possui natureza <strong>pirofórica</strong> (entra em combustão espontânea ao atrito ou raspagem no ar). Reage com água formando gás hidrogênio.</p>
+    </div>
+    <div class="reveal">
+      <h3>Estados de Oxidação (+3 e +4)</h3>
+      <p>O grande diferencial do Cério frente aos outros lantanídeos é a estabilidade do seu estado tetravalente (Ce⁴⁺) além do trivalente (Ce³⁺). Essa flexibilidade permite que o óxido de cério (CeO₂) atue como um "pulmão de oxigênio" quimicamente regenerável em catalisadores.</p>
+      <svg class="redox" viewBox="0 0 320 70" role="img" aria-label="Diagrama de redox entre Ce3+ e Ce4+">
+        <text x="0" y="40" class="t">Ce³⁺</text><text x="250" y="40" class="t">Ce⁴⁺</text>
+        <path d="M70 28h110M170 22l10 6-10 6" /><path d="M250 50H140M150 44l-10 6 10 6" opacity=".5"/>
+        <text x="95" y="16" class="s">− e⁻ (Oxidação)</text><text x="140" y="68" class="s">+ e⁻ (Redução)</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- NOVO TÓPICO 1: BENEFÍCIOS, PREJUÍZOS E DISPUTAS GEOPOLÍTICAS -->
+<section class="light sec" id="geopolitica" data-name="Disputas & Impactos">
+  <p class="idx">03</p>
+  <h2 class="title reveal">Benefícios, prejuízos<br>e disputas globais.</h2>
+  <div class="cols">
+    <div class="geo-card reveal">
+      <h3>Benefícios Estratégicos</h3>
+      <p>Insubstituível na transição energética e descarbonização. Reduz emissões tóxicas em veículos a combustão, viabiliza células a combustível de alta eficiência e permite a fabricação de telas e lentes de alta precisão indispensáveis para semicondutores e semicondutores ópticos.</p>
+    </div>
+    <div class="geo-card reveal">
+      <h3>Prejuízos e Impacto Ambiental</h3>
+      <p>A extração e purificação do Cério requerem processos químicos agressivos com lixiviação ácida. Os minerais associados (como a monazita) frequentemente contêm elementos radioativos (Tório e Urânio), gerando rejeitos de difícil mitigação ecológica se não houver manejo rigoroso.</p>
+    </div>
+  </div>
+  <div class="cols" style="margin-top: 2rem;">
+    <div class="geo-card reveal" style="grid-column: 1 / -1;">
+      <h3>Disputas Geopolíticas e Monopólio</h3>
+      <p>A produção e refino de Cério e terras raras concentram-se predominantemente na China (que domina mais de 70% da extração e cerca de 90% da separação química global). A dependência ocidental desse suprimento transformou o Cério e seus Lantanídeos correlatos em peças centrais de guerras fiscais e restrições de exportação entre potências mundiais (EUA, União Europeia e China).</p>
+    </div>
+  </div>
+</section>
+
+<!-- NOVO TÓPICO 2: RESERVAS, EXTRAÇÃO E MERCADO GLOBAL -->
+<section class="dark sec" id="mercado" data-name="Reservas & Mercado">
+  <p class="idx">04</p>
+  <h2 class="title reveal">Reservas mundiais<br>e dinâmica de mercado.</h2>
+  <div class="cols">
+    <div class="reveal">
+      <h3>Reservas Globais</h3>
+      <p>As maiores reservas mundiais conhecidas de terras raras ricas em Cério estão localizadas na <strong>China</strong> (Bayan Obo), seguidas pelo Brasil (com vastas jazidas de monazita e argilas iônicas em Araxá e Goiás), Vietnã, Rússia e Estados Unidos (Mountain Pass).</p>
+    </div>
+    <div class="reveal">
+      <h3>Cadeia de Valor e Mercado</h3>
+      <p>Embora o Cério seja o lantanídeo mais abundante e, portanto, tenha um preço por quilo menor em comparação ao Neodímio ou Disprósio, ele possui o <strong>maior volume de vendas e consumo industrial em toneladas</strong>. O mercado é impulsionado pelo setor automotivo e pela indústria de vidros eletrônicos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="light sec" id="extracao" data-name="Extração">
+  <p class="idx">05</p>
+  <h2 class="title reveal">Da rocha mineral<br>ao elemento puro.</h2>
+  <div class="cols">
+    <p class="lead reveal">O Cério não ocorre isolado na natureza. Ele é extraído principalmente de dois minerais complexos: a <strong>Bastnasita</strong> (fluorcarbonato) e a <strong>Monazita</strong> (fosfato de terras raras).</p>
+    <p class="reveal">A separação do Cério dos demais lantanídeos é facilitada pela sua propriedade única de ser oxidado ao estado Ce⁴⁺, permitindo sua precipitação seletiva separando-se de elementos idênticos.</p>
+  </div>
+  <ol class="steps reveal">
+    <li><b>01. Mineração</b>Extração do minério bruto da rocha e cominuição (moagem).</li>
+    <li><b>02. Flotação</b>Separação física dos minerais de ganga para concentrar os fluorcarbonatos.</li>
+    <li><b>03. Calcinação & Lixiviação</b>Tratamento térmico e ataque com ácidos fortes (HCl ou H₂SO₄).</li>
+    <li><b>04. Separação Redox</b>Oxidação seletiva do Ce³⁺ para Ce⁴⁺, permitindo precipitação líquida isolada.</li>
+    <li><b>05. Redução Metálica</b>Obtenção do metal puro por eletrólise do cloreto de cério fundido.</li>
+  </ol>
+</section>
+
+<section class="dark sec" id="aplicacoes" data-name="Aplicações">
+  <p class="idx">06</p>
+  <h2 class="title reveal">Seis pilares de<br>aplicação industrial.</h2>
+  <div class="apps">
+    
+    <!-- App 1 -->
+    <article class="app reveal">
+      <figure>
+        <svg viewBox="0 0 200 120" role="img"><ellipse cx="100" cy="80" rx="80" ry="22" fill="none" stroke="#bbb"/><ellipse cx="100" cy="72" rx="80" ry="22" fill="#2a2b2e" stroke="#ddd"/></svg>
+        <img src="vidro.png" alt="Polimento de farol automotivo com politriz" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Fig. 1 — Polimento óptico de precisão</figcaption>
+      </figure>
+      <div>
+        <h3>Polimento de Vidro</h3>
+        <p>O óxido de cério (CeO₂) é o agente de polimento mais eficiente do mundo para lentes ópticas, espelhos de telescópios e telas de smartphones.</p>
+        <p class="how">Mecanismo: Além do desgaste mecânico abrasivo, realiza uma ação químico-mecânica reativa que nivela a sílica do vidro em escala atômica.</p>
+      </div>
+    </article>
+
+    <!-- App 2 -->
+    <article class="app reveal">
+      <figure>
+        <svg viewBox="0 0 200 120" role="img"><rect x="40" y="20" width="120" height="80" rx="40" fill="#2a2b2e" stroke="#ddd"/></svg>
+        <img src="celula-combustivel.png" alt="Catalisador automotivo e juntas do escapamento" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Fig. 2 — Catalisador de escapamento</figcaption>
+      </figure>
+      <div>
+        <h3>Catalisadores Automotivos</h3>
+        <p>A céria é um componente crítico nos conversores catalíticos de veículos, armazenando e liberando oxigênio conforme a oscilação do combustível.</p>
+        <p class="how">Mecanismo: Converte monóxido de carbono (CO) e hidrocarbonetos não queimados em CO₂ e água inofensivos.</p>
+      </div>
+    </article>
+
+    <!-- App 3 -->
+    <article class="app reveal">
+      <figure>
+        <svg viewBox="0 0 200 120" role="img"><rect x="85" y="60" width="30" height="45" fill="#2a2b2e" stroke="#ddd"/></svg>
+        <img src="forno.png" alt="Hastes de ferrocério e pavio para acendedor" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Fig. 3 — Ferrocério e piroforia</figcaption>
+      </figure>
+      <div>
+        <h3>Pedra para Isqueiro</h3>
+        <p>Ligas metálicas de Cério e Ferro (Ferrocério ou Mischmetal) formam a base para pederneiras e acendedores de faísca.</p>
+        <p class="how">Mecanismo: Devido ao baixo ponto de ignição do Cério, pequenas raspagens geram partículas incandescentes instantâneas a mais de 3.000 °C.</p>
+      </div>
+    </article>
+
+    <!-- App 4 -->
+    <article class="app reveal">
+      <figure>
+        <svg viewBox="0 0 200 120" role="img"><path d="M70 20h60l-8 50q-22 12-44 0z" fill="#2a2b2e" stroke="#ddd"/></svg>
+        <img src="vidro (1).png" alt="Camadas de vidro técnico" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Fig. 4 — Vidros técnicos e absorção UV</figcaption>
+      </figure>
+      <div>
+        <h3>Vidro e Cerâmica</h3>
+        <p>Adicionado à formulação de vidros, o Cério descolore impurezas de ferro e bloqueia a radiação ultravioleta sem alterar a transparência visível.</p>
+        <p class="how">Mecanismo: Absorção seletiva no espectro UV protegendo remédios, alimentos e interiores prediais contra desbotamento.</p>
+      </div>
+    </article>
+
+    <!-- App 5 -->
+    <article class="app reveal">
+      <figure>
+        <svg viewBox="0 0 200 120" role="img"><rect x="50" y="25" width="100" height="18" fill="#444" stroke="#ddd"/></svg>
+        <img src="ferrocerio.png" alt="Diagrama explodido de uma célula a combustível" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Fig. 5 — Eletrólito de célula a combustível</figcaption>
+      </figure>
+      <div>
+        <h3>Célula a Combustível</h3>
+        <p>Cerâmicas à base de Céria dopada com Gadolínio (GDC) funcionam como eletrólitos sólidos condutores de íons em células elétricas a combustível.</p>
+        <p class="how">Mecanismo: Permite a condução rápida de íons O²⁻ operando em temperaturas intermediárias mais eficientes.</p>
+      </div>
+    </article>
+
+    <!-- App 6 -->
+    <article class="app reveal">
+      <figure>
+        <svg viewBox="0 0 200 120" role="img"><rect x="40" y="20" width="120" height="85" fill="#2a2b2e" stroke="#ddd"/></svg>
+        <img src="polimento.png" alt="Forno elétrico doméstico" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Fig. 6 — Revestimento catalítico de fornos</figcaption>
+      </figure>
+      <div>
+        <h3>Fornos Autolimpantes</h3>
+        <p>O revestimento interno dos fornos contém óxido de cério para acelerar a decomposição de gorduras durante o uso.</p>
+        <p class="how">Mecanismo: Atua como catalisador de oxidação contínua, queimando resíduos orgânicos em temperaturas normais de assamento.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- QUIZ REESTRUTURADO (EXATAMENTE 5 PERGUNTAS OBJETIVAS) -->
+<section class="dark sec quizsec" id="quiz" data-name="Quiz">
+  <p class="idx">07</p>
+  <h2 class="title reveal">Avalie seus<br>Conhecimentos.</h2>
+  
+  <div class="quiz" id="quizBox">
+    <div class="q-top">
+      <span id="qProg">Pergunta 1 de 5</span>
+      <span id="qScore">Acertos: 0</span>
+    </div>
+    <div class="q-track"><i id="qBar"></i></div>
+    <h3 id="qText">Carregando pergunta...</h3>
+    <div class="opts" id="qOpts"></div>
+  </div>
+
+</section>
+
+<footer class="dark foot">
+  <p class="mega small">CÉRIO</p>
+  <p>Fontes de referência: IUPAC, Royal Society of Chemistry, USGS Mineral Commodity Summaries & CRC Handbook of Chemistry and Physics.<br>Feito por:Orelha Lovers(Artur🦇, Edu, Augusto e Arthur)</p>
+  <a href="#topo" class="btn ghost" style="margin-top:2rem">Voltar ao topo</a>
+</footer>
+
+</div> <!-- FIM DO REVERSE SCROLL WRAPPER -->
+
+  <div class="pop" id="pop" role="dialog" aria-modal="true" hidden>
+    <div class="pop-card">
+      <p id="popT"></p>
+      <p id="popB"></p>
+      <button class="btn" id="popBtn" type="button">Próxima</button>
+    </div>
+  </div>
+
+</main>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Abertura: roleta -> o próprio Cério cresce e vira o título */
+  const intro = $('#topo');
+  if (intro) {
+    const NAMES = ['Lantânio','Cério','Praseodímio','Neodímio','Promécio','Samário','Európio','Gadolínio','Térbio','Disprósio','Hólmio','Érbio','Túlio','Itérbio','Lutécio'];
+    const N = NAMES.length, FIRST = -5, LAST = 35, END_POS = N + 1;
+    const stage = $('#introStage'), nav = $('.nav'), wheel = $('#wheel'), siteBg = $('#siteBg');
+    if (!reduce && nav) nav.classList.add('intro-opening');
+    const dust = $('#introDust');
+    if (dust) for (let i = 0; i < 26; i++) {
+      const particle = document.createElement('span'), size = 1 + Math.random() * 2.4;
+      particle.style.width = particle.style.height = size.toFixed(2) + 'px';
+      particle.style.left = (Math.random() * 100).toFixed(2) + '%';
+      particle.style.top = (60 + Math.random() * 45).toFixed(2) + '%';
+      particle.style.setProperty('--dur', (14 + Math.random() * 18).toFixed(2) + 's');
+      particle.style.setProperty('--delay', (-Math.random() * 30).toFixed(2) + 's');
+      particle.style.setProperty('--drift', ((Math.random() * 2 - 1) * 70).toFixed(0) + 'px');
+      particle.style.setProperty('--peak', (0.12 + Math.random() * 0.4).toFixed(2));
+      dust.appendChild(particle);
+    }
+    const clamp = (v, a=0, b=1) => Math.min(b, Math.max(a, v));
+    const easeIO = t => .5 - .5 * Math.cos(Math.PI * t);
+    const easeOut = t => 1 - Math.pow(1 - t, 3);
+    const items = [];
+    for (let k = FIRST; k <= LAST; k++) {
+      const el = document.createElement('div'), name = NAMES[((k % N) + N) % N];
+      el.className = 'wi' + (k === END_POS ? ' is-target' : '');
+      el.innerHTML = '<span>' + name + '</span>';
+      wheel.appendChild(el); items.push({ k, el });
+    }
+    if (reduce) { stage.classList.add('show'); if (siteBg) siteBg.classList.add('is-lit','is-big'); if (nav) nav.classList.remove('intro-opening'); }
+    else {
+      const render = () => {
+        const r = intro.getBoundingClientRect(), range = intro.offsetHeight - innerHeight;
+        if (r.bottom < -50 || r.top > innerHeight + 50) return;
+        const p = clamp(-r.top / range), fs = parseFloat(getComputedStyle(wheel).fontSize), step = fs * 1.22;
+        const lit = easeIO(clamp((p - .58) / .06));
+        const fadeOthers = easeIO(clamp((p - .62) / .065));
+        const grow = easeOut(clamp((p - .66) / .13));
+        stage.classList.toggle('is-lit', lit > .01); stage.classList.toggle('is-big', grow > .01);
+        if (siteBg) { siteBg.classList.toggle('is-lit', lit > .01); siteBg.classList.toggle('is-big', grow > .01); }
+        const center = easeIO(clamp((p - .62) / .07));
+        const baseLeft = innerWidth / 2 - (innerWidth <= 820 ? innerWidth * .3 : Math.min(innerWidth * .23, 208));
+        wheel.style.left = (baseLeft + (innerWidth / 2 - baseLeft) * center).toFixed(1) + 'px';
+        const pos = END_POS * easeIO(clamp((p - .03) / .59));
+        for (const it of items) {
+          const o = it.k - pos, a = Math.abs(o), isTarget = it.k === END_POS;
+          if (a > 4.6 && !isTarget) { it.el.style.display = 'none'; continue; }
+          it.el.style.display = '';
+          const sc = 1 - .07 * Math.min(a, 4), growScale = isTarget ? 1 + 2.2 * grow : 1;
+          const y = o * step, c = Math.round(240 - 114 * Math.min(a, 1)), label = it.el.querySelector('span');
+          let x = -.09 * fs * a * a;
+          if (isTarget) {
+            x -= (label.offsetWidth / 2) * growScale * grow;
+            it.el.classList.toggle('is-lit', lit > .01); it.el.classList.toggle('is-big', grow > .01);
+            it.el.style.opacity = Math.max(0, 1 - a * .17).toFixed(3);
+            it.el.style.filter = a < .12 ? 'none' : 'blur(' + (Math.min(a,4) * 1.7).toFixed(2) + 'px)';
+            it.el.style.color = lit > .01 ? '#b9c0c8' : '#696d74';
+            label.dataset.text = 'CÉRIO'; label.style.letterSpacing = (.01 + .07 * grow).toFixed(3) + 'em';
+          } else {
+            it.el.classList.remove('is-lit','is-big');
+            it.el.style.filter = a < .12 ? 'none' : 'blur(' + (Math.min(a,4) * 1.7).toFixed(2) + 'px)';
+            it.el.style.opacity = (Math.max(0,1-a*.17)*(1-fadeOthers)).toFixed(3);
+            it.el.style.color = 'rgb(' + c + ',' + (c+1) + ',' + (c+4) + ')';
+          }
+          it.el.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) rotate(' + (o*2*(1-grow)).toFixed(2) + 'deg) scale(' + (sc*growScale).toFixed(3) + ')';
+        }
+        const complete = p >= .79;
+        stage.classList.toggle('show', complete); if (nav) nav.classList.toggle('intro-opening', !complete);
+      };
+      let ticking = false;
+      const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { ticking = false; render(); }); } };
+      addEventListener('scroll', req, { passive:true }); addEventListener('resize', req);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(req);
+      render();
+    }
+  }
+
+  /* ----------------------------------------------------
+     2. EFEITO DE SCROLL REVERSO (UPWARD SCROLL ILLUSION)
+  ---------------------------------------------------- */
+  const reverseWrapper = $('#reverseWrapper');
+  const onScroll = () => {
+    const scrollY = window.scrollY;
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    
+    // Barra de Progresso
+    const bar = $('#bar');
+    if (bar) bar.style.width = (docH > 0 ? (scrollY / docH) * 100 : 0) + '%';
+
+    // Suave translação reversa paralaxe
+    if (reverseWrapper && !reduce && window.innerWidth > 820) {
+      const shift = Math.min(scrollY * 0.05, 120);
+      reverseWrapper.style.transform = `translateY(-${shift}px)`;
+    }
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ----------------------------------------------------
+     3. REVELAÇÕES & CONTADORES
+  ---------------------------------------------------- */
+  const count = el => {
+    const to = parseFloat(el.dataset.to), dec = +(el.dataset.dec || 0);
+    const fmt = v => v.toFixed(dec).replace('.', ',');
+    if (reduce) { el.textContent = fmt(to); return; }
+    const t0 = performance.now(), dur = 1500;
+    const tick = t => {
+      const p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 4);
+      el.textContent = fmt(to * e);
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    $$('.num', e.target).forEach(count);
+    io.unobserve(e.target);
+  }), { threshold: .1 });
+
+  $$('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 3) * 80 + 'ms';
+    io.observe(el);
+  });
+
+  /* ----------------------------------------------------
+     4. QUIZ DE EXATAMENTE 5 PERGUNTAS
+  ---------------------------------------------------- */
+  const QUESTIONS = [
+    {
+      q: 'Qual o número atômico do Cério e sua posição na Tabela Periódica?',
+      o: ['58 / Lantanídeo', '57 / Actinídeo', '60 / Metal de Transição', '58 / Gás Nobre'],
+      a: 0,
+      e: 'O Cério tem número atômico 58 e encabeça a série dos lantanídeos.'
+    },
+    {
+      q: 'Quais são os principais minérios fontes para extração do Cério?',
+      o: ['Bauxita e Hematita', 'Bastnasita e Monazita', 'Quartzo e Pirita', 'Halita e Calcário'],
+      a: 1,
+      e: 'A Bastnasita (fluorcarbonato) e a Monazita (fosfato) são as principais fontes minerais.'
+    },
+    {
+      q: 'Qual propriedade química torna o Cério único entre os lantanídeos?',
+      o: ['Incapaz de formar compostos', 'Estabilidade comum no estado de oxidação +4 além do +3', 'É o único elemento radioativo da série', 'Não reage com oxigênio'],
+      a: 1,
+      e: 'A facilidade de alternar entre Ce³⁺ e Ce⁴⁺ permite sua atuação em catalisadores e reações redox.'
+    },
+    {
+      q: 'Qual país detém o maior monopólio da extração e refinamento de terras raras hoje?',
+      o: ['Estados Unidos', 'Brasil', 'China', 'Alemanha'],
+      a: 2,
+      e: 'A China controla mais de 70% da mineração e até 90% da separação química mundial de terras raras.'
+    },
+    {
+      q: 'Por que o Óxido de Cério (CeO₂) é amplamente utilizado no polimento óptico?',
+      o: ['Porque derrete o vidro', 'Devido à sua ação abrasiva e reação químico-mecânica com a sílica', 'Para tingir o vidro de azul', 'Porque é um condutor magnético'],
+      a: 1,
+      e: 'O CeO₂ atua nivelando o vidro tanto fisicamente quanto quimicamente em escala atômica.'
+    }
+  ];
+
+  const box = $('#quizBox');
+  const pop = $('#pop'), popT = $('#popT'), popB = $('#popB'), popBtn = $('#popBtn');
+  const cv = $('#fx'), ctx = cv ? cv.getContext('2d') : null;
+  let idx = 0, score = 0, answered = false, parts = [], raf = 0;
+
+  function fit() { if (cv) { const dpr = Math.min(window.devicePixelRatio || 1, 2); cv.width = Math.round(innerWidth * dpr); cv.height = Math.round(innerHeight * dpr); cv.style.width = innerWidth + 'px'; cv.style.height = innerHeight + 'px'; if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0); } }
+  window.addEventListener('resize', fit); fit();
+
+  function confetti(x, y, n) {
+    if (reduce || !ctx) return;
+    const cols = ['#ffffff', '#cfd1d4', '#8d9096', '#e8e8e6'];
+    for (let i = 0; i < n; i++) {
+      const a = Math.random() * Math.PI * 2, v = 4 + Math.random() * 8;
+      parts.push({ x, y, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 5, w: 6, h: 4, r: Math.random() * 6, vr: 0.1, c: cols[i % cols.length], l: 80 });
+    }
+    if (!raf) raf = requestAnimationFrame(loop);
+  }
+
+  function loop() {
+    ctx.clearRect(0, 0, cv.width, cv.height);
+    parts = parts.filter(p => p.l-- > 0);
+    parts.forEach(p => {
+      p.vy += 0.2; p.x += p.vx; p.y += p.vy;
+      ctx.fillStyle = p.c; ctx.fillRect(p.x, p.y, p.w, p.h);
+    });
+    raf = parts.length ? requestAnimationFrame(loop) : 0;
+  }
+
+  function renderQuiz() {
+    const q = QUESTIONS[idx];
+    answered = false;
+    box.classList.remove('wrong');
+    $('#qText').textContent = q.q;
+    $('#qProg').textContent = `Pergunta ${idx + 1} de ${QUESTIONS.length}`;
+    $('#qScore').textContent = `Acertos: ${score}`;
+    $('#qBar').style.width = (idx / QUESTIONS.length * 100) + '%';
+    
+    const optsBox = $('#qOpts');
+    optsBox.innerHTML = '';
+    q.o.forEach((txt, i) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'opt';
+      btn.dataset.l = ['A', 'B', 'C', 'D'][i];
+      btn.textContent = txt;
+      btn.addEventListener('click', () => handleAnswer(i, btn));
+      optsBox.appendChild(btn);
+    });
+  }
+
+  function handleAnswer(i, btn) {
+    if (answered) return;
+    answered = true;
+    const q = QUESTIONS[idx];
+    const ok = (i === q.a);
+    const btns = $$('.opt', box);
+
+    btns.forEach(b => b.disabled = true);
+    btns[q.a].classList.add('ok');
+
+    if (ok) {
+      score++;
+      const rect = btn.getBoundingClientRect();
+      confetti(rect.left + rect.width / 2, rect.top, 80);
+    } else {
+      btn.classList.add('bad');
+      box.classList.add('wrong');
+    }
+
+    $('#qScore').textContent = `Acertos: ${score}`;
+    
+    setTimeout(() => {
+      popT.textContent = ok ? 'Resposta Correta!' : 'Resposta Incorreta';
+      popB.textContent = q.e;
+      popBtn.textContent = (idx === QUESTIONS.length - 1) ? 'Ver Resultado Final' : 'Próxima Pergunta';
+      pop.hidden = false;
+    }, 600);
+  }
+
+  popBtn.addEventListener('click', () => {
+    pop.hidden = true;
+    if (idx < QUESTIONS.length - 1) {
+      idx++;
+      renderQuiz();
+    } else {
+      showResult();
+    }
+  });
+
+  function showResult() {
+    box.innerHTML = `
+      <div class="q-top"><span>Quiz Concluído</span><span>${QUESTIONS.length} Perguntas</span></div>
+      <div class="q-track"><i style="width:100%"></i></div>
+      <h3 style="font-size:3rem;margin:1.5rem 0">Pontuação: ${score} / ${QUESTIONS.length}</h3>
+      <p style="margin-bottom:2rem;font-size:1.2rem">${score >= 4 ? 'Excelente domínio sobre as propriedades e aplicações do Cério!' : 'Bom teste! Releia os tópicos para consolidar o conhecimento.'}</p>
+      <button class="btn" id="qRetry" type="button">Refazer Quiz</button>
+    `;
+    $('#qRetry').addEventListener('click', () => {
+      idx = 0; score = 0;
+      box.innerHTML = `
+        <div class="q-top"><span id="qProg"></span><span id="qScore"></span></div>
+        <div class="q-track"><i id="qBar"></i></div>
+        <h3 id="qText"></h3>
+        <div class="opts" id="qOpts"></div>
+      `;
+      renderQuiz();
+    });
+  }
+
+  renderQuiz();
+
+  /* Menu Mobile */
+  const burger = $('#burger'), nav = $('.nav');
+  if (burger) {
+    burger.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+    });
+    $$('#menu a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    }));
+  }
+
+
+})();
+</script>
+</body>
+</html>
+
+
+
+
